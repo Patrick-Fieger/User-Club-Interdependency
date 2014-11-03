@@ -1,0 +1,30 @@
+/* Style for Testdummy: Datenbank füller 
+ * Authors: Peters, Tim J.; Fieger, Patrick
+ * Created: 2014-11-03
+ * Last Modified: 2014-11-03 */
+
+body {
+	color:#343434;
+	background: #fff;
+}
+
+header, section {
+	width:100%;
+	margin:0 auto;
+}
+
+header {
+	height: 250px;
+}
+
+.weights, .user {
+	width: 15%;
+}
+
+.legende, .clubs {
+	width: 85%;
+}
+
+li {
+	display: inline-block;
+}
