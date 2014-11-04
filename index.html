@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="dummy">
     <head>
         <title>Testdummy: Datenbank f&uuml;ller</title>
         <link rel="stylesheet" href="./styles/all.css" type="text/css" />
@@ -22,49 +22,32 @@
             </div>
         </header>
         <div id="main">
-            <ul class="user">
-            <li>
-                <div class="wasted" style="height:100px"></div>
-                <div class="upperclass" style="height:30px"></div>
-                <div class="special" style="height:66px"></div>
-                <div class="mainstream" style="height:78px"></div>
-                <div class="comfortable" style="height:10px"></div>
-                <div class="size" style="height:30px"></div>
-                <h4>Username</h4>
-            </li>
-            <li>
-                <div class="wasted" style="height:100px"></div>
-                <div class="upperclass" style="height:30px"></div>
-                <div class="special" style="height:66px"></div>
-                <div class="mainstream" style="height:78px"></div>
-                <div class="comfortable" style="height:10px"></div>
-                <div class="size" style="height:30px"></div>
-                <h4>Username</h4>
+            <ul class="user" ng-controller="UsersCtrl">
+            <li ng-repeat="user in users" id="{{user._id}}">
+                <div class="wasted" style="height:{{user.wasted}}px"></div>
+                <div class="upperclass" style="height:{{user.upperclass}}px"></div>
+                <div class="special" style="height:{{user.special}}px"></div>
+                <div class="mainstream" style="height:{{user.mainstream}}px"></div>
+                <div class="comfortable" style="height:{{user.comfortable}}px"></div>
+                <div class="size" style="height:{{user.size}}px"></div>
+                <h4>{{user.name}}</h4>
             </li>
         </ul>
-        <ul class="clubs">
-            <li>
-                <div class="wasted" style="height:100px"></div>
-                <div class="upperclass" style="height:30px"></div>
-                <div class="special" style="height:66px"></div>
-                <div class="mainstream" style="height:78px"></div>
-                <div class="comfortable" style="height:10px"></div>
-                <div class="size" style="height:30px"></div>
-                <h4>Clubname</h4>
-            </li>
-            <li>
-                <div class="wasted" style="height:100px"></div>
-                <div class="upperclass" style="height:30px"></div>
-                <div class="special" style="height:66px"></div>
-                <div class="mainstream" style="height:78px"></div>
-                <div class="comfortable" style="height:10px"></div>
-                <div class="size" style="height:30px"></div>
-                <h4>Clubname</h4>
+        <ul class="clubs" ng-controller="ClubsCtrl">
+            <li ng-repeat="club in clubs" id="{{club._id}}">
+                <div class="wasted" style="height:{{club.wasted}}px"></div>
+                <div class="upperclass" style="height:{{club.upperclass}}px"></div>
+                <div class="special" style="height:{{club.special}}px"></div>
+                <div class="mainstream" style="height:{{club.mainstream}}px"></div>
+                <div class="comfortable" style="height:{{club.comfortable}}px"></div>
+                <div class="size" style="height:{{club.size}}px"></div>
+                <h4>{{club.name}}</h4>
             </li>
         </ul>
     </div>
 
     <script type="text/javascript" src="js/core/jquery.js"></script>
-    <script type="text/javascript" src="js/custom/dummy.js"></script>
+    <script type="text/javascript" src="js/core/angular.min.js"></script>
+	<script type="text/javascript" src="js/custom/dummy.js"></script>
 </body>
 </html>
