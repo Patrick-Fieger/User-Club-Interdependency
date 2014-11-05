@@ -21,9 +21,9 @@
                 <p class="size">Gro&szlig;</p>
             </div>
         </header>
-        <div id="main">
-            <ul class="user" ng-controller="UsersCtrl">
-            <li ng-repeat="user in users" id="{{user._id}}">
+        <div id="main" ng-controller="AppCtrl">
+            <ul class="user">
+            <li ng-click="buildData()" ng-repeat="user in users" id="{{user._id}}">
                 <div class="wasted" style="height:{{user.wasted}}px"></div>
                 <div class="upperclass" style="height:{{user.upperclass}}px"></div>
                 <div class="special" style="height:{{user.special}}px"></div>
@@ -33,8 +33,8 @@
                 <h4>{{user.name}}</h4>
             </li>
         </ul>
-        <ul class="clubs" ng-controller="ClubsCtrl">
-            <li ng-repeat="club in clubs" id="{{club._id}}">
+        <ul class="clubs">
+            <li ng-click="buildData()" ng-repeat="club in clubs" id="{{club._id}}">
                 <div class="wasted" style="height:{{club.wasted}}px"></div>
                 <div class="upperclass" style="height:{{club.upperclass}}px"></div>
                 <div class="special" style="height:{{club.special}}px"></div>
