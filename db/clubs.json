@@ -1,5 +1,28 @@
-[
-  {"_id": "44e0c3a3e5566eaa2c3774bcf63c65db9d07db2d", "name": "Batschkapp", "wasted":100, "upperclass": 30, "special": 66, "mainstream": 78, "comfortable": 10, "size": 30},
-  {"_id": "7d885f519665d533d389e49f469cbd3f75d474ce", "name": "U60311", "wasted":100, "upperclass": 1, "special": 88, "mainstream": 12, "comfortable": 3, "size": 25},
-  {"_id": "3b4b96bcb9453700e541c85173babcaad8207f47", "name": "Living XXL", "wasted":0, "upperclass": 100, "special": 5, "mainstream": 85, "comfortable": 15, "size": 50}
-]
+[{
+    "_id": "44e0c3a3e5566eaa2c3774bcf63c65db9d07db2d",
+    "name": "Batschkapp",
+    "wasted": 100,
+    "upperclass": 30,
+    "special": 66,
+    "mainstream": 78,
+    "comfortable": 10,
+    "size": 30
+}, {
+    "_id": "7d885f519665d533d389e49f469cbd3f75d474ce",
+    "name": "U60311",
+    "wasted": 100,
+    "upperclass": 1,
+    "special": 88,
+    "mainstream": 12,
+    "comfortable": 3,
+    "size": 25
+}, {
+    "_id": "3b4b96bcb9453700e541c85173babcaad8207f47",
+    "name": "Living XXL",
+    "wasted": 0,
+    "upperclass": 100,
+    "special": 5,
+    "mainstream": 85,
+    "comfortable": 15,
+    "size": 50
+}]
