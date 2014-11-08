@@ -10,20 +10,20 @@ app.controller('AppCtrl', function($scope, $http) {
 
     // Erste initialisierung und funktion um sich die aktuellen Daten vom Server zu holen
     $scope.getData = function() {
-        $http.get('./db/clubs.json').then(function(clubsResponse) {
+        $http.get('http://localhost:3000/clubs').then(function(clubsResponse) {
             $scope.clubs = clubsResponse.data;
         });
-        $http.get('./db/users.json').then(function(usersResponse) {
+        $http.get('http://localhost:3000/users').then(function(usersResponse) {
             $scope.users = usersResponse.data;
         });
 
-        // $http.get('http://localhost:3000/users').then(function(user) {
-        //     console.log(user.data);
-        // });
+         $http.get('http://localhost:3000/users').then(function(user) {
+             console.log(user.data);
+         });
 
-        // $http.get('http://localhost:3000/clubs').then(function(clubs) {
-        //     console.log(clubs.data);
-        // });
+         $http.get('http://localhost:3000/clubs').then(function(clubs) {
+             console.log(clubs.data);
+         });
     }
 
     // Funktion zum erzeugen des jeweiligen JSON's
