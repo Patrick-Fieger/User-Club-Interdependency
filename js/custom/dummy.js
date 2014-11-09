@@ -33,14 +33,14 @@ app.controller('AppCtrl', function($scope, $http) {
             "amount": faktor
         };
         $scope.sendData();
-    }
+    };
 
     // Senden der Daten an den Node.js Server
     $scope.sendData = function() {
         $http.put('http://localhost:3000/users', $scope.values).then(function(response) {
             $scope.getData();
         });
-    }
+    };
     $scope.getData();
 });
 
