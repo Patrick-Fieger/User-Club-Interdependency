@@ -78,3 +78,7 @@ header, section {
 	text-align:right;
 }
 
+.user li.active{
+	border-color:red;
+}
+

@@ -15,39 +15,25 @@ app.controller('AppCtrl', function($scope, $http) {
         });
         $http.get('http://localhost:3000/users').then(function(usersResponse) {
             $scope.users = usersResponse.data;
+            setTimeout(function(){
+                $('.user li:first-child').addClass('active');
+            },300);
         });
-
-         $http.get('http://localhost:3000/users').then(function(user) {
-             console.log(user.data);
-         });
-
-         $http.get('http://localhost:3000/clubs').then(function(clubs) {
-             console.log(clubs.data);
-         });
     }
 
     // Funktion zum erzeugen des jeweiligen JSON's
     $scope.buildData = function() {
-        var that = $('#' + this.user._id),
-        name = that.find("h4").text(),
-        id = that.attr("id"),
+        var that = $('#' + this.club._id),
+        club_id = that.attr("id"),
+        user_id = $('.user li.active').attr('id'),
         faktor = parseInt($('.weights input[type="radio"]:checked').val());
         $scope.values = {
-            "name": name,
-            "_id": id,
-            "attr": [],
-            "faktor": faktor
+            "user_id": user_id,
+            "club_id": club_id,
+            "amount": faktor
         };
-
-        that.find('div').each(function() {
-            var heightInPx = $(this).css('height');
-            var height = parseInt(heightInPx.replace('px', ''));
-            $scope.values.attr.push(height);
-        }).promise().done(function() {
-            $scope.sendData();
-        });
+        $scope.sendData();
     }
-
 
     // Senden der Daten an den Node.js Server
     $scope.sendData = function() {
@@ -55,6 +41,10 @@ app.controller('AppCtrl', function($scope, $http) {
             $scope.getData();
         });
     }
-
     $scope.getData();
+});
+
+$(document).on('click', '.user li', function(event) {
+    $('.user li').removeClass('active');
+    $(this).addClass('active');
 });
