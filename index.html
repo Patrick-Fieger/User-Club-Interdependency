@@ -22,7 +22,7 @@
             </div>
         </header>
         <div id="main" ng-controller="AppCtrl">
-            <ul class="user">
+            <ul class="user" ng-init="chosen=0">
                 <li ng-repeat="user in users" ng-click="$parent.chosen=$index" id="{{user._id}}" ng-class="{active:$parent.chosen==$index}">
                     <div class="wasted" style="height:{{user.heruntergekommen}}px"></div>
                     <div class="upperclass" style="height:{{user.edel}}px"></div>

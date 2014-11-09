@@ -34,6 +34,7 @@ app.controller('AppCtrl', function($scope, $http) {
 
     // Senden der Daten an den Node.js Server
     $scope.sendData = function() {
+        if($scope.values.user_id != null && $scope.values.club_id != null)
         $http.put('http://localhost:3000/users', $scope.values).then(function(response) {
             $scope.getData();
         });
