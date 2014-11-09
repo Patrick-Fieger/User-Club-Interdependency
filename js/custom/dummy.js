@@ -15,9 +15,6 @@ app.controller('AppCtrl', function($scope, $http) {
         });
         $http.get('http://localhost:3000/users').then(function(usersResponse) {
             $scope.users = usersResponse.data;
-            setTimeout(function(){
-                $('.user li:first-child').addClass('active');
-            },300);
         });
     }
 
@@ -41,10 +38,5 @@ app.controller('AppCtrl', function($scope, $http) {
             $scope.getData();
         });
     };
-    $scope.getData();
-});
-
-$(document).on('click', '.user li', function(event) {
-    $('.user li').removeClass('active');
-    $(this).addClass('active');
+    $scope.getData(true);
 });
